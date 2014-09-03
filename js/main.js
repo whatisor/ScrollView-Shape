@@ -55,6 +55,6 @@ define(function (require, exports, module) {
   	if(timeline.outputType==1)modifier.setTransform(Transform.rotateX(-0.3),{duration:500})
   	else modifier.setTransform(Transform.rotateX(0),{duration:500})
   }.bind(this));
-  
+  window.parent.check();
   
 });
