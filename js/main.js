@@ -49,12 +49,13 @@ define(function (require, exports, module) {
 
   var modifier = new StateModifier({origin:[0.5,0.7],transform:Transform.rotate(-0.0,0,0)})
     mainContext.add(modifier).add(timeline);
-  Engine.on('keydown',function(){
+function key(){
 	  timeline.outputType++;
   	if(timeline.outputType>=8)timeline.outputType = 0;
   	if(timeline.outputType==1)modifier.setTransform(Transform.rotateX(-0.3),{duration:500})
   	else modifier.setTransform(Transform.rotateX(0),{duration:500})
-  }.bind(this));
-  window.parent.check();
+  }
+  Engine.on('keydown',key.bind(this));
+  if(window.parent)window.parent.document.body.addEventListener('keydown',key.bind(this));
   
 });
