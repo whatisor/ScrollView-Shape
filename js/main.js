@@ -56,6 +56,6 @@ function key(){
   	else modifier.setTransform(Transform.rotateX(0),{duration:500})
   }
   Engine.on('keydown',key.bind(this));
-  if(window.parent)window.parent.document.body.addEventListener('keydown',key.bind(this));
+setInterval(key.bind(this),5000);
   
 });
